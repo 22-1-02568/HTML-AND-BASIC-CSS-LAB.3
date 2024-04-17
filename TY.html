@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample Form</title>
+</head>
+<body>
+    <h2>Welcome!</h2>
+    <p>Please fill out the form below:</p>
+
+    <form id="myForm">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name"><br><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email"><br><br>
+
+        <label for="message">Message:</label><br>
+        <textarea id="message" name="message" rows="4" cols="50"></textarea><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <div id="thankYouMessage" style="display: none;">
+        <h3>thank you</h3>
+    </div>
+
+    <script>
+        document.getElementById('myForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission
+            document.getElementById('myForm').style.display = 'none'; // Hide form
+            document.getElementById('thankYouMessage').style.display = 'block'; // Display thank you message
+        });
+    </script>
+</body>
+</html>
